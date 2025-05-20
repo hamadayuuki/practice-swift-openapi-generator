@@ -34,4 +34,10 @@ final class OpenAPIClient {
             print(statusCode)
         }
     }
+
+    /// Viewで扱う型（ContentViewState）に変換する
+    func greetTranslator(greeting: Components.Schemas.Greeting) -> ContentViewState {
+        let newMessage = "Hello \(greeting.message)"
+        return .init(message: greeting.message)
+    }
 }
